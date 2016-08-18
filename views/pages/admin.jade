@@ -3,6 +3,7 @@ block content
     .container
         .row
             form.form-horizontal(method="post",action="/admin/movie/new")
+                input(type="hidden",name="movie[_id]",value="#{movie._id}")
                 .form-group
                     label.col-sm-2.control-label(for="inputTitle") 电影名字
                     .col-sm-3
@@ -23,6 +24,10 @@ block content
                     label.col-sm-2.control-label(for="inputPoster") 电影海报
                     .col-sm-3
                         input#inputPoster.form-control(type="text",name="movie[poster]",value="#{movie.poster}")
+                .form-group
+                    label.col-sm-2.control-label(for="inputFlash") 片源地址
+                    .col-sm-3
+                        input#inputFlash.form-control(type="text",name="movie[flash]",value="#{movie.flash}")
                 .form-group
                     label.col-sm-2.control-label(for="inputYear") 电影上映日期
                     .col-sm-3
