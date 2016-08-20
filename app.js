@@ -125,3 +125,21 @@ app.get('/admin/list',function(req,res){
         });
     });
 });
+
+
+
+app.delete('/admin/list',function(req,res){
+    var id = req.query.id;  //id是通过？传递过来的，所以用query
+    if(id){
+        Movie.remove({_id:id},function(err,movie){
+            if(err){
+                console.log(err);
+            }else{
+                res.json({success:1});
+            }
+        });
+    }
+});
+
+
+
